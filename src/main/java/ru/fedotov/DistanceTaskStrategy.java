@@ -34,6 +34,9 @@ public class DistanceTaskStrategy {
 
     @Aggregate
     public Map<String, Object> aggregate(@Param("results") List<Map<String, Object>> results) {
+
+        System.out.println("Это изменения для теста гитхаба");
+
         return results.stream()
                 .map(x -> (Map<String, Object>) x.get("result"))
                 .filter(result -> result.get("distance") != null)
